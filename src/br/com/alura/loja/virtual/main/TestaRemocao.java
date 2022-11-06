@@ -1,6 +1,7 @@
 package br.com.alura.loja.virtual.main;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -10,9 +11,12 @@ public class TestaRemocao {
 		
 		Connection con = ConnectionFactory.recuperarConexao();
 		
-		Statement stm = con.createStatement();
+		Integer idRemocao = 2;
 		
-		stm.execute("DELETE FROM PRODUTO WHERE ID > 2");
+		PreparedStatement stm = con.prepareStatement("DELETE FROM PRODUTO WHERE ID > ?");
+		stm.setInt(1, idRemocao);
+		
+		stm.execute();
 		
 		// quantas linhas foram modificadas após o stm ser executado
 		
