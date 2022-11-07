@@ -1,4 +1,4 @@
-package br.com.alura.loja.virtual.main;
+ package br.com.alura.loja.virtual.main;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,9 @@ import java.sql.SQLException;
 public class TestaListagem {
 
 	public static void main(String[] args) throws SQLException {
-		
-		Connection con = ConnectionFactory.recuperarConexao();
+
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection con = connectionFactory.recuperarConexao();
 		
 		PreparedStatement stm = con.prepareStatement("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
 		stm.execute();
@@ -26,20 +27,5 @@ public class TestaListagem {
 		}
 		
 		con.close();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 }
