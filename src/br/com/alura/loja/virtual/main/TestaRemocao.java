@@ -3,7 +3,6 @@ package br.com.alura.loja.virtual.main;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TestaRemocao {
 
