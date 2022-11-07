@@ -7,8 +7,9 @@ import java.sql.SQLException;
 public class TestaRemocao {
 
 	public static void main(String[] args) throws SQLException {
-		
-		Connection con = ConnectionFactory.recuperarConexao();
+
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection con = connectionFactory.recuperarConexao();
 		
 		Integer idRemocao = 2;
 		
